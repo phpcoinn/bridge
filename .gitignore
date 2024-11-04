@@ -2,3 +2,4 @@ vendor/
 logs/
 config.secure.php
 state.json
+/dev/
