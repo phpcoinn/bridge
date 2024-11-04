@@ -1,0 +1,19 @@
+{
+    "name": "marko/bridge",
+    "autoload": {
+        "psr-4": {
+            "Marko\\Bridge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "phpcoinn",
+            "email": "phpcoinn@gmail.com"
+        }
+    ],
+    "require": {
+        "web3p/web3.php": "^0.3.2",
+        "web3p/ethereum-tx": "0.4.3",
+        "web3p/ethereum-wallet": "0.1.0"
+    }
+}
