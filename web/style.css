@@ -1,0 +1,248 @@
+#phpcoin-auth-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(127, 127, 127, 0.8);
+}
+#phpcoin-auth-container .phpcoin-auth-card {
+  -webkit-box-shadow: 0 2px 8px 0 rgba(81, 86, 190, 0.3);
+  box-shadow: 0 2px 8px 0 rgba(81, 86, 190, 0.3);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: 1px solid #e9e9ef;
+  border-radius: 0.25rem;
+  color: #212529;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-header {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-bottom: 1px solid #e9e9ef !important;
+  padding: 1.25rem 1.25rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-header img {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5rem;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-header .phpcoin-auth-card-title {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #495057;
+  font-size: 15.4px;
+  margin: 0 0 7px 0;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-header .phpcoin-auth-card-subtitle {
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0;
+  --bs-text-opacity: 1;
+  color: #74788d !important;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-header .phpcoin-auth-card-subtitle a {
+  color: #5156be;
+  text-decoration: none !important;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body {
+  width: 540px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem 1.25rem;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row {
+  margin-bottom: 1rem !important;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: inline-block;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-inputgroup {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-inputgroup input {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 0.47rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-inputgroup input:focus {
+  color: #212529;
+  border-color: #a8abdf;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-inputgroup button {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.47rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border: 1px solid #ced4da !important;
+  border-left: none !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  margin-left: 0 !important;
+  box-shadow: none !important;
+  color: #000;
+  background-color: #e9e9ef;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-form-check {
+  display: block;
+  min-height: 1.3125rem;
+  padding-left: 1.5em;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-form-check input {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid #454b47;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  -webkit-transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, background-position 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 0;
+  float: left;
+  margin-left: -1.5em;
+  border-radius: 0.25em;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-form-check label {
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body .phpcoin-auth-card-text .phpcoin-auth-form-row .phpcoin-auth-help-block {
+  --bs-text-opacity: 1;
+  color: #74788d !important;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body dl {
+  display: flex;
+  margin-bottom: 0;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-body dl dd {
+  flex-basis: 30%;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-footer {
+  padding: 1.25rem 1.25rem;
+  border-top: 1px solid #e9e9ef !important;
+  color: #74788d !important;
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  display: flex;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-footer .phpcoin-auth-error {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  margin-left: 10px;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-footer button {
+  outline: 0 !important;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.47rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  border-width: thin !important;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  color: #fff;
+  background-color: #5156be;
+  border-color: #5156be;
+  box-shadow: 0 2px 6px 0 rgba(81, 86, 190, 0.5);
+  min-width: 110px;
+}
+#phpcoin-auth-container .phpcoin-auth-card .phpcoin-auth-card-footer button.cancel-btn {
+  background-color: transparent;
+  color: #5156be;
+  border-color: #5156be;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
