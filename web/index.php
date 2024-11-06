@@ -111,8 +111,12 @@
                     </div>
                     <div class="row mb-3">
                         <label for="chainAddress" class="col-sm-2 col-form-label">Target chain address:</label>
-                        <div class="col-sm-10">
-                            <input type="text" v-model="chainAddress"  class="form-control" id="chainAddress" required/>
+                        <div class="col-sm-7">
+                            <input type="text" v-model="chainAddress" :readonly="signer"  class="form-control" id="chainAddress" required/>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-outline-primary w-100" @click="connectMetamask" v-if="!signer">Connect Metamask</button>
+                            <button type="button" class="btn btn-primary w-100" @click="disconenctMetamask" v-if="signer">Disconnect Metamask</button>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Start conversion</button>
@@ -191,7 +195,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <button class="btn btn-primary" @click="connectMetamask" v-if="!signer">
+                        <button class="btn btn-outline-primary" @click="connectMetamask" v-if="!signer">
                             Connect Metamask
                         </button>
                         <button class="btn btn-outline-primary" @click="disconenctMetamask" v-if="signer">Disconnect Metamask</button>
@@ -220,8 +224,12 @@
                     </div>
                     <div class="row mb-3">
                         <label for="phpCoinAddress" class="col-sm-2 col-form-label">PHPCoin address:</label>
-                        <div class="col-sm-10">
-                            <input type="text" v-model="phpcoinAddress"  class="form-control" id="phpCoinAddress" required/>
+                        <div class="col-sm-7">
+                            <input type="text" v-model="phpcoinAddress" :readonly="phputil.account"  class="form-control" id="phpCoinAddress" required/>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-outline-primary w-100" @click="connectPHPCoinWallet" v-if="!phputil.account">Connect PHPCoin Wallet</button>
+                            <button type="button" class="btn btn-primary w-100" @click="logout" v-if="phputil.account">Disconnect PHPCoin Wallet</button>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Start conversion</button>
@@ -333,7 +341,7 @@
                 this.selChain = localStorage.getItem('selChain');
                 if(this.selChain) {
                     this.changedBlockChain()
-                    if(localStorage.getItem('connectedMetamask')) {
+                    if(localStorage.getItem('connectedMetamask')==='true') {
                         this.connectMetamask()
                     }
                 }
@@ -342,7 +350,7 @@
                     node: this.config.node,
                     chainId: this.config.chainId
                 },()=>{
-
+                    this.phpcoinAddress = this.phputil.account && this.phputil.account.address
                 });
             })
         },
@@ -357,11 +365,14 @@
                 this.phputil.auth((res, err) => {
                     if(err) {
                         this.showError(err);
+                    } else {
+                        this.phpcoinAddress = res.address
                     }
                 });
             },
             logout() {
                 this.phputil.logout(()=>{
+                    this.phpcoinAddress = null
                 });
             },
             startConversion() {
@@ -449,6 +460,7 @@
                     console.log(this.provider);
                     toRaw(this.provider).getSigner().then(signer => {
                         this.signer = signer;
+                        this.chainAddress = this.signer.address
                         console.log(this.signer)
                         this.abi = this.config.blockchains[this.selChain].jsAbi;
                         this.contract = new ethers.Contract(this.config.blockchains[this.selChain].contractAddress, this.abi, toRaw(this.provider))
@@ -473,6 +485,7 @@
             disconenctMetamask() {
                 this.provider = null;
                 this.signer=null;
+                this.chainAddress = null
                 localStorage.setItem('connectedMetamask', false)
             },
             startBurnConversion() {
