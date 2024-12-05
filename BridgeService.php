@@ -43,6 +43,10 @@ class BridgeService
         foreach ($txs as $tx) {
             $txId = $tx['id'];
             _log("Processing transaction " . $txId);
+            if($tx['type'] != TX_TYPE_SEND) {
+                _log("Invalid transaction type " . $tx['type']);
+                continue;
+            }
             $height = $tx['height'];
             $confirmations = $block_height - $height;
             if ($confirmations < $minConfirmations) {
