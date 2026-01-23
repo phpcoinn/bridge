@@ -33,16 +33,17 @@ class BridgeService
         if(empty($startHeight)) {
             $startHeight = $this->blockchainConfig['startHeight'];
         }
+//        $startHeight = 1069041;
         $block = SdkUtil::api_get($this->node, "currentBlock");
         $block_height = $block['height'];
-        _log("Processing bridge transactions for " . $address);
-        $txs = SdkUtil::api_get($this->node, "findTransactions&dst=" . $address."&fromHeight=$startHeight");
+        _log("Processing bridge transactions for " . $address. " from height " . $startHeight);
+        $txs = SdkUtil::api_get($this->node, "findTransactions&dst=" . $address."&fromHeight=$startHeight&type=1");
         _log("Found " . count($txs) . " transactions");
         $txs = array_reverse($txs);
         $minted_none = true;
         foreach ($txs as $tx) {
             $txId = $tx['id'];
-            _log("Processing transaction " . $txId);
+            _log("Processing transaction " . $txId . " height " . $tx['height']);
             if($tx['type'] != TX_TYPE_SEND) {
                 _log("Invalid transaction type " . $tx['type']);
                 continue;
