@@ -3,7 +3,8 @@
 const CONFIG = [
     "blockchains" => [
         "Polygon" => [
-            "rpcUrl" => "https://polygon-rpc.com",
+            "rpcUrl0" => "https://polygon-rpc.com",
+            "rpcUrl" => "https://polygon-mainnet.infura.io/v3/7fe3e0cd4aeb461aa2004466caeabce2",
             "chainId" => 137,
             "phpCoinAddress" => "PpoLqN5aJ3fkcZvtWFuLH5SrqzA1f2DP2x",
             "startHeight" => 747149,

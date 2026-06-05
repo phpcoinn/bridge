@@ -64,6 +64,9 @@
                                         <a :href="`${config.node}/apps/explorer/address.php?address=${config.blockchains[selChain].phpCoinAddress}`" target="_blank">
                                             {{supply.phpcoinBalance}}
                                         </a>
+
+                                        [<a target="_blank" :href="`https://main1.phpcoin.net/apps/explorer/txs.php?search%5Bdate%5D%5Bfrom%5D=&search%5Bdate%5D%5Bto%5D=&search%5Bsrc%5D=&search%5Bdst%5D=${config.blockchains[selChain].phpCoinAddress}&search%5Btype%5D%5B%5D=1`">Transactions</a>]
+
                                     </dt>
                                 </dl>
                                 <dl class="row mb-0">
@@ -72,6 +75,7 @@
                                         <a :href="`${config.blockchains[selChain].explorerUrl}/token/${config.blockchains[selChain].contractAddress}`" target="_blank">
                                             {{supply.tokenSupply}}
                                         </a>
+                                        [<a :href="`https://polygonscan.com/advanced-filter?tkn=${config.blockchains[selChain].contractAddress}&txntype=2&mtd=0xd3fc9864%7eMint`">Transactions</a>]
                                     </dt>
                                 </dl>
                             </div>
@@ -88,7 +92,6 @@
                                     <div>
                                         Your PHPCoin address:
                                         <div class="fw-bold">{{phputil.account.address}}</div>
-                                    </div>
                                     <div class="mt-2">
                                         Your PHPCoin balance:
                                         <div class="fw-bold">{{phputil.balance}}</div>
@@ -184,12 +187,15 @@
                                     <a :href="`${config.node}/apps/explorer/address.php?address=${config.blockchains[selChain].phpCoinAddress}`" target="_blank">
                                         {{supply.phpcoinBalance}}
                                     </a>
+                                    [<a target="_blank" :href="`https://main1.phpcoin.net/apps/explorer/txs.php?search%5Bdate%5D%5Bfrom%5D=&search%5Bdate%5D%5Bto%5D=&search%5Bsrc%5D=${config.blockchains[selChain].phpCoinAddress}&search%5Bdst%5D=&search%5Btype%5D%5B%5D=1`">Transactions</a>]
+
                                 </dd>
                                 <dt class="col-sm-3">Token supply:</dt>
                                 <dd class="col-sm-9">
                                     <a :href="`${config.blockchains[selChain].explorerUrl}/token/${config.blockchains[selChain].contractAddress}`" target="_blank">
                                         {{supply.tokenSupply}}
                                     </a>
+                                    [<a target="_blank" :href="`https://polygonscan.com/advanced-filter?tkn=${config.blockchains[selChain].contractAddress}&txntype=2&mtd=0x7641e6f3%7eBurn`">Transactions</a>]
                                 </dd>
                             </dl>
                         </div>
